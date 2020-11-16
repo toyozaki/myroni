@@ -34,6 +34,7 @@ func main() {
 	mux := http.NewServeMux()
 
 	myroniHello := myroni.New(
+		myroni.NewLogger(),
 		myroni.HandlerFunc(sampleMiddleware),
 		myroni.Wrap(http.HandlerFunc(helloHandler)),
 	)
